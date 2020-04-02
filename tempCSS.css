@@ -1,0 +1,148 @@
+/* typography */
+
+
+/* colors */
+
+/* Primair:  #005A77 (HLB blauw)
+Accenten: #003C4F (donker blauw), #FBBA00 (geel)
+Secundair: #E4E4E4 (licht grijs), #707070 (grijs), #505050 (donker grijs) */
+
+
+
+
+
+/* main */
+*{ 
+    font-family: 'Muli', sans-serif;
+    font-size: 12px;
+}
+h1{
+    font-size: 24px;
+}
+
+/* container */
+.botui-app-container {
+    position: fixed;
+    bottom: 2.5em;
+    right: 2.5em;
+    height: 40em; 
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.botui-container {
+    height: calc(100% - 55px);
+    width: 100%;
+    display: block;
+}
+.botui-message-container {
+    display: inline-block;
+}
+
+/* Userbar */
+.user-bar {
+    height: 55px;
+    background: #003c4f;
+    color: #ffffff;
+    padding: 0 8px;
+    position: relative;
+    z-index: 1;
+}
+.user-bar div {
+    float: left;
+    transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+  }
+.user-bar .avatar {
+    margin: 0 0 0 5px;
+    width: 36px;
+    height: 36px;
+}
+.user-bar .avatar img {
+    border-radius: 50%;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+    display: block;
+    width: 100%;
+}
+.user-bar .name {
+    font-weight: 600;
+    text-overflow: ellipsis;
+    letter-spacing: 0.3px;
+    margin: 0 0 0 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 110px;
+}
+
+/* buttons */
+.botui-actions-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.botui-actions-buttons-button{
+    margin: 5px;
+    border: 1px solid #005a77;
+    color: #005a77;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 7px 15px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    transition: ease-in-out 0.2s;
+}
+.botui-actions-buttons-button:hover{
+    color: #ffffff;
+    background-color: #005a77;
+}
+
+/* ratings */ 
+/* 
+-Margins still need to be set to 0 (not working yet)
+-Borders net to be changed depending on which child (also not working yet)
+*/
+.botui-actions-ratings-button{
+    margin: 0;
+    border: 1px solid #005a77;
+    color: #005a77;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 7px 15px;
+    border-radius: 0px 0px 0px 0px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    transition: ease-in-out 0.2s;
+}
+.botui-actions-ratings-button:is(:first-child){
+    border-radius: 10px 0px 0px 10px; 
+}
+.botui-actions-ratings-button:is(:last-child){
+    border-radius: 0px 10px 10px 0px;
+}
+
+
+/*  ^^^laatste beetje styling waar ik nog mee bezig was    */
+
+
+/* textinputs */
+.botui-actions-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.botui-actions-text-input{
+    color: rgba(112, 112, 112, 0.7);
+    border-bottom: 1px solid #005a77;
+}
+
+/* messages */
+.botui-message-content{
+    border-radius: 10px 10px 10px 5px;
+    color: #005a77;
+    background-color: #e4e4e4;
+}
+.botui-message-content.human{
+    border-radius: 10px 10px 5px 10px;
+    color: #ffffff;
+    background-color: #005a77;
+}

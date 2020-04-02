@@ -16,10 +16,30 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/botui/build/botui-theme-default.css"
     />
+    <link
+      rel="stylesheet"
+      href="tempCSS.css"
+    />
+     <!--Muli font -->
+    <link href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
   </head>
   <body>
     <!--#2 BotUI Tag-->
     <div class="botui-app-container" id="hello-world">
+      <div class="user-bar">
+        <!-- <div class="back">
+          <span class="iconify" data-icon="zmdi-arrow-left" data-inline="false"></span>
+        </div> -->
+        <div class="avatar">
+          <img src="imgs/logo.png" alt="Avatar">
+        </div>
+        <div class="name">
+          <h1>HLBOT</h1>
+        </div>
+        <div class="actions more">
+          <i class="zmdi zmdi-more-vert"></i>
+        </div>
+      </div>
       <bot-ui></bot-ui>
     </div>
     <!--#3 Javascript Files-->
