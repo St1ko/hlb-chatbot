@@ -10,6 +10,13 @@ const categories = [
   "Klanten"
 ];
 
+let result = [
+  { thema: "Informatie", score: 0 },
+  { thema: "Strategie", score: 0 },
+  { thema: "Mensen", score: 0 },
+  { thema: "Persoonlijk", score: 0 }
+];
+
 const botui = new BotUI("hello-world");
 
 botui.message
@@ -60,7 +67,7 @@ const rateCategory = index => {
   botui.message
     .add({
       delay: 500,
-      content: "Hoe zou u uw bedrijf beoordelen op: " + categories[index]
+      content: "Hoe zou u uw bedrijf beoordelen op: " + result[index].thema
     })
     .then(function() {
       botui.action
@@ -69,28 +76,30 @@ const rateCategory = index => {
           action: [
             {
               text: "1",
-              value: "rating1"
+              value: 1
             },
             {
               text: "2",
-              value: "rating2"
+              value: 2
             },
             {
               text: "3",
-              value: "rating3"
+              value: 3
             },
             {
               text: "4",
-              value: "rating4"
+              value: 4
             },
             {
               text: "5",
-              value: "rating5"
+              value: 5
             }
           ]
         })
-        .then(function() {
-          if (categories[index + 1]) {
+        .then(function(res) {
+          addToResult(index, res.value);
+
+          if (result[index + 1]) {
             rateCategory(index + 1);
           } else {
             uitslag();
@@ -99,13 +108,18 @@ const rateCategory = index => {
     });
 };
 
+const addToResult = (index, value) => {
+  result[index].score = result[index].score + value;
+};
+
 const uitslag = function() {
   botui.message
     .add({
       delay: 1000,
-      content: "Gefeliciteerd"
+      content: "Bedankt. We zien dat je nog kan verbetern op ...."
     })
     .then(function() {
+      console.log(result);
       contact();
     });
 };
