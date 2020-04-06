@@ -40,12 +40,21 @@
           <i class="zmdi zmdi-more-vert"></i>
         </div>
       </div>
+
       <bot-ui></bot-ui>
+
+      <div id="progressContainer">
+        <div id="progressBar">
+            <div id="progressBarFill"></div>
+        </div>
+        <p id="progressText">0/8</p>
+      </div>
+
     </div>
     <!--#3 Javascript Files-->
     <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+    <script src="./js/timestamp.js"></script> <!--File met de functies om timestamps neer te zetten boven textballonnen-->  
     <script src="./js/botui.js"></script> <!--Aangepaste botui library, zorgt ervoor dat je in de buttons ook afbeeldingen kan laten staan in antwoorden gebruiker -->
-      
     <script src="./js/bot.js"></script> <!--File waarin alles van de bot gebeurt (vragen etc)-->
   </body>
 </html>
