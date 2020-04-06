@@ -44,6 +44,18 @@ let results = [
   { thema: "Persoonlijk", score: 0 }
 ];
 
+const getLowestScore = function(){
+  let final = results[0];
+  
+  for (i = 0; i < results.length; i++){
+    if (final.score > results[i].score){
+      final = results[i];
+    
+    }
+  }
+  return final;
+}
+
 const botui = new BotUI("hello-world");
 
 botui.message
@@ -147,10 +159,9 @@ const uitslag = function() {
   botui.message
     .add({
       delay: 1000,
-      content: "Bedankt. We zien dat je nog kan verbeteren op ...."
+      content: "Bedankt. We zien dat je nog kan verbeteren op " + getLowestScore().thema
     })
     .then(function() {
-      console.log(results);
       contact();
     });
 };
