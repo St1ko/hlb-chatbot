@@ -1,16 +1,43 @@
-//#4 Initialization
-const categories = [
-  "Cash",
-  "Persoonlijk",
-  "Eigendom",
-  "Risico",
-  "Informatie",
-  "Mensen",
-  "Strategie",
-  "Klanten"
+const testQuestions = [
+  {
+    question: "Ik heb voldoende ontspanning (sport, muziek, wandelen)",
+    thema: "Persoonlijk"
+  },
+  {
+    question:
+      "In mijn werk als ondernemer kan ik me uitstekend persoonlijk ontwikkelen",
+    thema: "Persoonlijk"
+  },
+  {
+    question: "We hebben een actuele begroting voor dit jaar",
+    thema: "Informatie"
+  },
+  {
+    question:
+      "We weten exact de kostprijs per productgroep, en daarmee het rendement per productgroep",
+    thema: "Informatie"
+  },
+  {
+    question: "We zouden iedere medewerker opnieuw aannemen",
+    thema: "Mensen"
+  },
+  {
+    question:
+      "Onze medewerkers zien wekelijks de voor hen cruciale getallen in een dashboard",
+    thema: "Mensen"
+  },
+  {
+    question: "We hebben een stip op de horizon vastgesteld",
+    thema: "Strategie"
+  },
+  {
+    question:
+      "Wij kennen de risico’s waar het bedrijf tegenaan kan lopen en weten hoe wij hier mee om moeten gaan.",
+    thema: "Strategie"
+  }
 ];
 
-let result = [
+let results = [
   { thema: "Informatie", score: 0 },
   { thema: "Strategie", score: 0 },
   { thema: "Mensen", score: 0 },
@@ -59,15 +86,15 @@ const test = function() {
         "Welke van deze onderwerpen zorgen binnen uw bedrijf voor problemen?"
     })
     .then(function() {
-      rateCategory(0);
+      rateQuestion(0);
     });
 };
 
-const rateCategory = index => {
+const rateQuestion = index => {
   botui.message
     .add({
       delay: 500,
-      content: "Hoe zou u uw bedrijf beoordelen op: " + result[index].thema
+      content: testQuestions[index].question
     })
     .then(function() {
       botui.action
@@ -97,10 +124,10 @@ const rateCategory = index => {
           ]
         })
         .then(function(res) {
-          addToResult(index, res.value);
+          addToResults(index, res.value);
 
-          if (result[index + 1]) {
-            rateCategory(index + 1);
+          if (testQuestions[index + 1]) {
+            rateQuestion(index + 1);
           } else {
             uitslag();
           }
@@ -108,18 +135,22 @@ const rateCategory = index => {
     });
 };
 
-const addToResult = (index, value) => {
-  result[index].score = result[index].score + value;
+const addToResults = (index, value) => {
+  for (const result of results) {
+    if (result.thema === testQuestions[index].thema) {
+      result.score = result.score + value;
+    }
+  }
 };
 
 const uitslag = function() {
   botui.message
     .add({
       delay: 1000,
-      content: "Bedankt. We zien dat je nog kan verbetern op ...."
+      content: "Bedankt. We zien dat je nog kan verbeteren op ...."
     })
     .then(function() {
-      console.log(result);
+      console.log(results);
       contact();
     });
 };
