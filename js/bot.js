@@ -44,17 +44,11 @@ let results = [
   { thema: "Persoonlijk", score: 0 }
 ];
 
-const getLowestScore = function(){
-  let final = results[0];
-  
-  for (i = 0; i < results.length; i++){
-    if (final.score > results[i].score){
-      final = results[i];
-    
-    }
-  }
-  return final;
-}
+const getLowestScore = function() {
+  return results.reduce((prev, curr) =>
+    prev.score < curr.score ? prev : curr
+  );
+};
 
 const botui = new BotUI("hello-world");
 
@@ -111,7 +105,7 @@ const rateQuestion = index => {
     .then(function() {
       botui.action
         .button({
-          cssClas: "botui-actions-ratings",
+          cssClass: "botui-actions-ratings",
           human: true,
           action: [
             {
@@ -160,7 +154,9 @@ const uitslag = function() {
   botui.message
     .add({
       delay: 1000,
-      content: "Bedankt. We zien dat je nog kan verbeteren op " + getLowestScore().thema
+      content:
+        "Bedankt. We zien dat je nog kan verbeteren op " +
+        getLowestScore().thema
     })
     .then(function() {
       contact();
