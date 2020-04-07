@@ -105,7 +105,7 @@ const rateQuestion = index => {
     .then(function() {
       botui.action
         .button({
-          cssClas: "botui-actions-ratings",
+          cssClass: "botui-actions-ratings",
           human: true,
           action: [
             {
