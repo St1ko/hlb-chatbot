@@ -260,7 +260,8 @@
           }
           resolve(_index);
         }, _msg.delay || 0);
-      });
+      })
+      .then(function(index){appendTimestamp(index, _msg.human)})
     }
 
     function _checkOpts(_opts) {

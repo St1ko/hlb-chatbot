@@ -7,10 +7,6 @@
 Accenten: #003C4F (donker blauw), #FBBA00 (geel)
 Secundair: #E4E4E4 (licht grijs), #707070 (grijs), #505050 (donker grijs) */
 
-
-
-
-
 /* main */
 *{ 
     font-family: 'Muli', sans-serif;
@@ -29,7 +25,7 @@ h1{
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 .botui-container {
-    height: calc(100% - 55px);
+    height: calc(100% - 112px);
     width: 100%;
     display: block;
 }
@@ -97,32 +93,27 @@ h1{
 }
 
 /* ratings */ 
-/* 
--Margins still need to be set to 0 (not working yet)
--Borders net to be changed depending on which child (also not working yet)
-*/
-.botui-actions-ratings-button{
-    margin: 0;
+
+.botui-actions-ratings button{
     border: 1px solid #005a77;
     color: #005a77;
     cursor: pointer;
     font-weight: 600;
-    padding: 7px 15px;
     border-radius: 0px 0px 0px 0px;
     background-color: #ffffff;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
     transition: ease-in-out 0.2s;
 }
-.botui-actions-ratings-button:is(:first-child){
+
+.botui-actions-ratings button:first-child{
     border-radius: 10px 0px 0px 10px; 
 }
-.botui-actions-ratings-button:is(:last-child){
+.botui-actions-ratings button:last-child{
     border-radius: 0px 10px 10px 0px;
 }
-
-
-/*  ^^^laatste beetje styling waar ik nog mee bezig was    */
-
+.botui-actions-ratings button:not(:last-child){
+    margin-right: 0px;
+}
 
 /* textinputs */
 .botui-actions-text{
@@ -145,4 +136,45 @@ h1{
     border-radius: 10px 10px 5px 10px;
     color: #ffffff;
     background-color: #005a77;
+}
+
+/* progressbar */
+#progressContainer{
+    width: 100%;
+    margin-top: 18px;
+    opacity: 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: ease-in-out 0.2s;
+}
+#progressBar{
+    width: 90%;
+    height: 7px;
+    border: 1px solid #005a77;
+    border-radius: 7px;
+}
+#progressBarFill{
+    width: 0;
+    height: 100%;
+    background-color: #fbba00;
+    border-radius: 7px;
+}
+#progressText{
+    font-size: 10px;
+}
+
+/* timestamp */
+.botui-message{
+    display:flex;
+    flex-direction: column-reverse;
+}
+.timestamp{ 
+    margin: 0px 5px 5px 5px;
+    font-size: 9px;
+    color: #005a77;
+}
+.timestamp.human{
+    text-align: end;
 }
