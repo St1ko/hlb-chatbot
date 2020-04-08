@@ -72,7 +72,7 @@ const getLowestScore = function() {
   );
 };
 
-const botui = new BotUI("hello-world");
+const botui = new BotUI("hlbot");
 
 botui.message
   .add({
