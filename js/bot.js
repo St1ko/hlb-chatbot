@@ -62,7 +62,7 @@ botui.message
   .then(function() {
     botui.message
       .add({
-        delay: 500,
+        delay: 1000,
         content:
           "Wij hebben binnen HLB Van Daal een Challenge & Control tool ontwikkeld. Deze tool focust op het optimaliseren van uw bedrijf. Heeft u interesse om te zien hoe wij uw bedrijf kunnen helpen te optimaliseren door middel van het afnemen van deze tool?"
       })
@@ -90,7 +90,7 @@ botui.message
 const test = function() {
   botui.message
     .add({
-      delay: 500,
+      delay: 1000,
       content:
         "Ik ga je nu een paar vragen stellen om erachter te komen waar wij je mee kunnen helpen. Er komen in totaal 8 uitspraken.Je kan antwoord geven door op de knoppen te drukken van 1 tot 5, waarbij je met 5 eens bent met de uitspraak en 1 er niet eens mee bent. Succes!"
     })
@@ -118,7 +118,7 @@ const test = function() {
 const moreInfo = function() {
   botui.message
     .add({
-      delay: 500,
+      delay: 1000,
       content:
         "Tijdens deze test wordt er gefocust op het testen van 4 thema's binnen uw bedrijf: Persoonlijk, Mensen, Strategie en Informatie. Op basis van het resultaat krijgt u een korte uitleg hoe wij u daarmee kunnen helpen. Heeft u nog meer vragen? Dan kunt u <a href=" +
         CCLink +
@@ -144,7 +144,7 @@ const moreInfo = function() {
 const rateQuestion = index => {
   botui.message
     .add({
-      delay: 500,
+      delay: 1000,
       content: testQuestions[index].question
     })
     .then(function() {
@@ -271,14 +271,14 @@ const telefoon = function() {
 
 const eind = function() {
   botui.message.add({
-    delay: 500,
+    delay: 1000,
     content: "HLB Van Daal zal zo snel mogelijk contact met u opnemen"
   });
 };
 
 const zelfContact = function() {
   botui.message.add({
-    delay: 500,
+    delay: 1000,
     content:
       "U kunt contact opnemen met een van onze medewerkers via het telefoonnummer: +31583728 of ons mailadres: HLB@Vandaal.nl"
   });
