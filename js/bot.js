@@ -37,7 +37,7 @@ const testQuestions = [
   }
 ];
 
-let CCLink = "https://www.hlb.nl/van-daal/pagina/challenge-control";
+const CCLink = "https://www.hlb.nl/van-daal/pagina/challenge-control";
 
 let results = [
   { thema: "Informatie", score: 0, indepth: "Het opstellen van de financiële documenten kost veel tijd en expertise om op te zetten.<br>Bij HLB Van Daal hebben wij meerdere specialisten die u daarmee kunnen helpen."},
@@ -64,7 +64,7 @@ botui.message
       .add({
         delay: 1000,
         content:
-          "Wij hebben binnen HLB Van Daal een Challenge & Control tool ontwikkeld. Deze tool focust op het optimaliseren van uw bedrijf. Heeft u interesse in het afnemen van deze korte test? Zo kunnen wij u helpen bij het optimaliseren van uw bedrijf.?"
+          "Wij hebben binnen HLB Van Daal een Challenge & Control tool ontwikkeld. Deze tool focust op het optimaliseren van uw bedrijf. Heeft u interesse in het afnemen van deze korte test? Zo kunnen wij u helpen bij het optimaliseren van uw bedrijf."
       })
       .then(function() {
         botui.action
