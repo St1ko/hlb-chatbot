@@ -1,4 +1,4 @@
-@import "_colors.scss";
+@import '_colors.scss';
 
 .botui-app-container {
   position: fixed;
@@ -38,7 +38,7 @@
 
   &:hover {
     color: $white;
-    background-color: pink;
+    background-color: $hlb_blue;
   }
 }
 
