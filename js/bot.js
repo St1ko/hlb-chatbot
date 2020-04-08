@@ -245,25 +245,17 @@ let progressbar = (function(){
   };
 
   let ProgressInit = function(){
-      _ProgressFill(-1, NumOfQuestions);
-      _ProgressText(-1, NumOfQuestions);
+    _ProgressFill(-1, NumOfQuestions);
+    _ProgressText(-1, NumOfQuestions);
   };
   
   let ProgressVisible = function(state){
-      if(state == true){
-          ProgressContainer.style.opacity = "1";
-      }
-      else if(state == false){
-          ProgressContainer.style.opacity = "0";
-      }
-      else{
-          //console.log("error")
-      };
+    ProgressContainer.style.opacity = state ? "1" : "0";
   };
 
   let UpdateProgress = function(currentQuestionNumber){
-      _ProgressFill(currentQuestionNumber, NumOfQuestions);
-      _ProgressText(currentQuestionNumber, NumOfQuestions);
+    _ProgressFill(currentQuestionNumber, NumOfQuestions);
+    _ProgressText(currentQuestionNumber, NumOfQuestions);
   };
 
   return{
