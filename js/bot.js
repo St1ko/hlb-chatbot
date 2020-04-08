@@ -40,10 +40,10 @@ const testQuestions = [
 let CCLink = "https://www.hlb.nl/van-daal/pagina/challenge-control";
 
 let results = [
-  { thema: "Informatie", score: 0, indepth: "Informatie uitleg"},
-  { thema: "Strategie", score: 0, indepth: "Strategie uitleg"},
-  { thema: "Mensen", score: 0, indepth: "Mensen uitleg"},
-  { thema: "Persoonlijk", score: 0, indepth: "Persoonlijk uitleg"}
+  { thema: "Informatie", score: 0, indepth: "Informatie uitleg" },
+  { thema: "Strategie", score: 0, indepth: "Strategie uitleg" },
+  { thema: "Mensen", score: 0, indepth: "Mensen uitleg" },
+  { thema: "Persoonlijk", score: 0, indepth: "Persoonlijk uitleg" }
 ];
 
 const getLowestScore = function() {
@@ -52,13 +52,12 @@ const getLowestScore = function() {
   );
 };
 
-
-
 const botui = new BotUI("hello-world");
 
 botui.message
   .add({
-    content: "Hallo, ik ben Dirk de virtuele assistent van HLB Van Daal! Wat leuk om je te zien."
+    content:
+      "Hallo, ik ben Dirk de virtuele assistent van HLB Van Daal! Wat leuk om je te zien."
   })
   .then(function() {
     botui.message
@@ -97,22 +96,22 @@ const test = function() {
     })
     .then(function() {
       botui.action
-          .button({
-            human: true,
-            action: [
-              {
-                text: "Doe de test",
-                value: () => rateQuestion(0)
-              },
-              {
-                text: "Meer uitleg",
-                value: () => moreInfo()
-              }
-            ]
-          })
-          .then(function(res) {
-            res.value();
-          });
+        .button({
+          human: true,
+          action: [
+            {
+              text: "Doe de test",
+              value: () => rateQuestion(0)
+            },
+            {
+              text: "Meer uitleg",
+              value: () => moreInfo()
+            }
+          ]
+        })
+        .then(function(res) {
+          res.value();
+        });
     });
 };
 
@@ -121,22 +120,24 @@ const moreInfo = function() {
     .add({
       delay: 500,
       content:
-        "Tijdens deze test wordt er gefocust op het testen van 4 thema's binnen uw bedrijf: Persoonlijk, Mensen, Strategie en Informatie. Op basis van het resultaat krijgt u een korte uitleg hoe wij u daarmee kunnen helpen. Heeft u nog meer vragen? Dan kunt u <a href="+ CCLink +">hier</a> klikken om te worden doorgeleid naar de website. U kunt ook contact opnemen met een van onze medewerkers via het telefoonnummer: +315863722"
+        "Tijdens deze test wordt er gefocust op het testen van 4 thema's binnen uw bedrijf: Persoonlijk, Mensen, Strategie en Informatie. Op basis van het resultaat krijgt u een korte uitleg hoe wij u daarmee kunnen helpen. Heeft u nog meer vragen? Dan kunt u <a href=" +
+        CCLink +
+        ">hier</a> klikken om te worden doorgeleid naar de website. U kunt ook contact opnemen met een van onze medewerkers via het telefoonnummer: +315863722"
     })
     .then(function() {
       botui.action
-          .button({
-            human: true,
-            action: [
-              {
-                text: "Doe de test",
-                value: () => rateQuestion(0)
-              }
-            ]
-          })
-          .then(function(res) {
-            res.value();
-          });
+        .button({
+          human: true,
+          action: [
+            {
+              text: "Doe de test",
+              value: () => rateQuestion(0)
+            }
+          ]
+        })
+        .then(function(res) {
+          res.value();
+        });
     });
 };
 
@@ -200,7 +201,9 @@ const uitslag = function() {
       delay: 1000,
       content:
         "Bedankt. We zien dat je nog kan verbeteren op " +
-        getLowestScore().thema + " " + getLowestScore().indepth
+        getLowestScore().thema +
+        " " +
+        getLowestScore().indepth
     })
     .then(function() {
       contact();
@@ -211,7 +214,9 @@ const contact = function() {
   botui.message
     .add({
       delay: 1000,
-      content: "Om een beter idee te krijgen van uw resultaat en hoe wij u daarmee kunnen helpen, kunt u hieronder uw mailadres of telefoonnummer achterlaten. Een medewerker zal dan zo snel mogelijk contact met u opnemen.<br>Als u liever direct contact opneemt met een van onze medewerkers, kunt u ons bereiken via ons telefoonnummer: <a href="+">+318583758</a>"
+      content:
+        "Om een beter idee te krijgen van uw resultaat en hoe wij u daarmee kunnen helpen, kunt u hieronder uw mailadres of telefoonnummer achterlaten. Een medewerker zal dan zo snel mogelijk contact met u opnemen.<br>Als u liever direct contact opneemt met een van onze medewerkers, kunt u ons bereiken via ons telefoonnummer: <a href=" +
+        ">+318583758</a>"
     })
     .then(function() {
       botui.action
@@ -274,6 +279,7 @@ const eind = function() {
 const zelfContact = function() {
   botui.message.add({
     delay: 500,
-    content: "U kunt contact opnemen met een van onze medewerkers via het telefoonnummer: +31583728 of ons mailadres: HLB@Vandaal.nl"
+    content:
+      "U kunt contact opnemen met een van onze medewerkers via het telefoonnummer: +31583728 of ons mailadres: HLB@Vandaal.nl"
   });
 };
