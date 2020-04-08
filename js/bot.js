@@ -40,10 +40,10 @@ const testQuestions = [
 let CCLink = "https://www.hlb.nl/van-daal/pagina/challenge-control";
 
 let results = [
-  { thema: "Informatie", score: 0, indepth: "Informatie uitleg"},
-  { thema: "Strategie", score: 0, indepth: "Strategie uitleg"},
-  { thema: "Mensen", score: 0, indepth: "Mensen uitleg"},
-  { thema: "Persoonlijk", score: 0, indepth: "Persoonlijk uitleg"}
+  { thema: "Informatie", score: 0, indepth: "Het opstellen van de financiële documenten kost veel tijd en expertise om op te zetten.<br>Bij HLB Van Daal hebben wij meerdere specialisten die u daarmee kunnen helpen."},
+  { thema: "Strategie", score: 0, indepth: "Het strategisch vastzetten van een doel voor uw bedrijf is het belangrijkste onderdeel. Uit cijfers blijken veel bedrijf failliet te gaan omdat zij geen duidelijke stip hebben op de horizon. <br>Bij HLB Van Daal hebben wij meerdere specialisten die u daarmee kunnen helpen."},
+  { thema: "Mensen", score: 0, indepth: "Het tevreden stellen van uw medewerkers is een nauwkeurig vakgebied en iedere medewerker dient de juiste kennis bij zich te dragen.<br>Bij HLB Van Daal hebben wij meerdere specialisten die u daarmee kunnen helpen."},
+  { thema: "Persoonlijk", score: 0, indepth: "Als ondernemer wilt u een goede balans vinden tussen werk en privé.<br>Bij HLB Van Daal hebben wij meerdere specialisten die u daarmee kunnen helpen."}
 ];
 
 const getLowestScore = function() {
@@ -65,7 +65,7 @@ botui.message
       .add({
         delay: 500,
         content:
-          "Wij hebben binnen HLB Van Daal een Challenge & Control tool ontwikkeld. Deze tool focust op het optimaliseren van uw bedrijf. Heeft u interesse om te zien hoe wij uw bedrijf kunnen helpen te optimaliseren door middel van het afnemen van deze tool?"
+          "Wij hebben binnen HLB Van Daal een Challenge & Control tool ontwikkeld. Deze tool focust op het optimaliseren van uw bedrijf. Heeft u interesse in het afnemen van deze korte test? Zo kunnen wij u helpen bij het optimaliseren van uw bedrijf.?"
       })
       .then(function() {
         botui.action
@@ -211,7 +211,7 @@ const contact = function() {
   botui.message
     .add({
       delay: 1000,
-      content: "Om een beter idee te krijgen van uw resultaat en hoe wij u daarmee kunnen helpen, kunt u hieronder uw mailadres of telefoonnummer achterlaten. Een medewerker zal dan zo snel mogelijk contact met u opnemen.<br>Als u liever direct contact opneemt met een van onze medewerkers, kunt u ons bereiken via ons telefoonnummer: <a href="+">+318583758</a>"
+      content: "Om een beter idee te krijgen van uw resultaat en hoe wij u daarmee kunnen helpen, kunt u hieronder uw mailadres of telefoonnummer achterlaten. Een medewerker zal dan zo snel mogelijk contact met u opnemen.<br> U kunt ook zelf contact opnemen met een van onze medewerkers"
     })
     .then(function() {
       botui.action
@@ -267,7 +267,7 @@ const telefoon = function() {
 const eind = function() {
   botui.message.add({
     delay: 500,
-    content: "HLB Van Daal zal zo snel mogelijk contact met u opnemen"
+    content: "Een medewerker van HLB Van Daal zal zo snel mogelijk contact met u opnemen. Bedankt en nog een fijne dag verder!"
   });
 };
 
