@@ -9,7 +9,7 @@ Secundair: #E4E4E4 (licht grijs), #707070 (grijs), #505050 (donker grijs) */
 /* main */
 
 body {
-  background-image: url("imgs/bg.jpg");
+  background-image: url("img/bg.jpg");
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -79,17 +79,17 @@ h1 {
 }
 
 .user-bar .button-maxmin {
-    float: right;
+  float: right;
 }
 
 .user-bar .button-maxmin button {
-    background-image: url(imgs/arrow.png);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: cover;
-    height: 50px;
-    width: 50px;
-    border: none;
+  background-image: url(img/arrow.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+  border: none;
 }
 
 /* buttons */
@@ -190,46 +190,42 @@ h1 {
 }
 
 /* timestamp */
-.botui-message{
-    display:flex;
-    flex-direction: column-reverse;
+.botui-message {
+  display: flex;
+  flex-direction: column-reverse;
 }
-.timestamp{ 
-    margin: 0px 5px 5px 5px;
-    font-size: 9px;
-    color: #005a77;
+.timestamp {
+  margin: 0px 5px 5px 5px;
+  font-size: 9px;
+  color: #005a77;
 }
-.timestamp.human{
-    text-align: end;
+.timestamp.human {
+  text-align: end;
 }
 
 /* Scrollbar */
 
- ::-webkit-scrollbar-track
-{
-	border-radius: 10px;
-	background-color: #ffffff;
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 
-::-webkit-scrollbar
-{
-    width: 8px;
-	background-color: #ffffff;
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #ffffff;
 }
 
-::-webkit-scrollbar-thumb
-{
-    border-radius: 10px;
-    background-clip: padding-box;
-    border: 2px solid #ffffff;
-	background-color: #005a77;
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid #ffffff;
+  background-color: #005a77;
 }
 
 /* Transition */
-.minimized
-{
-    transform: translateY(38em);
+.minimized {
+  transform: translateY(38em);
 }
- #hello-world{
-    transition: all 1.5s ease-in-out;
- }
+#hello-world {
+  transition: all 1.5s ease-in-out;
+}

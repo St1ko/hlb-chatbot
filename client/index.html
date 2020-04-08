@@ -16,12 +16,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/botui/build/botui-theme-default.css"
     />
+    <link rel="stylesheet" href="tempCSS.css" />
+    <!--Muli font -->
     <link
+      href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
       rel="stylesheet"
-      href="tempCSS.css"
     />
-     <!--Muli font -->
-    <link href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="botui-app-container" id="hello-world">
@@ -30,7 +30,7 @@
           <span class="iconify" data-icon="zmdi-arrow-left" data-inline="false"></span>
         </div> -->
         <div class="avatar">
-          <img src="imgs/logo.png" alt="Avatar">
+          <img src="img/logo.png" alt="Avatar" />
         </div>
         <div class="name">
           <h1>HLBOT</h1>
@@ -39,7 +39,7 @@
           <i class="zmdi zmdi-more-vert"></i>
         </div>
         <div class="button-maxmin">
-          <button id='button'></button>
+          <button id="button"></button>
         </div>
       </div>
 
@@ -47,18 +47,21 @@
 
       <div id="progressContainer">
         <div id="progressBar">
-            <div id="progressBarFill"></div>
+          <div id="progressBarFill"></div>
         </div>
         <p id="progressText"></p>
       </div>
-
     </div>
     <!--#3 Javascript Files-->
     <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
-    <script src="./js/timestamp.js"></script> <!--File met de functies om timestamps neer te zetten boven textballonnen-->  
-    <script src="./js/botui.js"></script> <!--Aangepaste botui library, zorgt ervoor dat je in de buttons ook afbeeldingen kan laten staan in antwoorden gebruiker -->
-    
-    <script src="./js/bot.js"></script> <!--File waarin alles van de bot gebeurt (vragen etc)-->
-    <script src="./js/button.js"></script> <!--File waarin alles van de de functie staat om met een knop de chatbot te laten verdwijnen-->
+    <script src="./js/timestamp.js"></script>
+    <!--File met de functies om timestamps neer te zetten boven textballonnen-->
+    <script src="./js/botui.js"></script>
+    <!--Aangepaste botui library, zorgt ervoor dat je in de buttons ook afbeeldingen kan laten staan in antwoorden gebruiker -->
+
+    <script src="./js/bot.js"></script>
+    <!--File waarin alles van de bot gebeurt (vragen etc)-->
+    <script src="./js/button.js"></script>
+    <!--File waarin alles van de de functie staat om met een knop de chatbot te laten verdwijnen-->
   </body>
 </html>

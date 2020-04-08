@@ -108,8 +108,6 @@ botui.message
   });
 
 const test = function() {
-  progressbar.ProgressInit();
-  progressbar.ProgressVisible(true);
   botui.message
     .add({
       delay: 1000,
@@ -123,7 +121,11 @@ const test = function() {
           action: [
             {
               text: "Doe de test",
-              value: () => rateQuestion(0)
+              value: () => {
+                progressbar.ProgressInit();
+                progressbar.ProgressVisible(true);
+                rateQuestion(0);
+              }
             },
             {
               text: "Meer uitleg",
@@ -153,7 +155,11 @@ const moreInfo = function() {
           action: [
             {
               text: "Doe de test",
-              value: () => rateQuestion(0)
+              value: () => {
+                progressbar.ProgressInit();
+                progressbar.ProgressVisible(true);
+                rateQuestion(0);
+              }
             }
           ]
         })
@@ -308,41 +314,39 @@ const zelfContact = function() {
   });
 };
 
-
- /* ====== Progressbar ====== */
-let progressbar = (function(){
-
+/* ====== Progressbar ====== */
+let progressbar = (function() {
   const ProgressContainer = document.getElementById("progressContainer");
   const ProgressFill = document.getElementById("progressBarFill");
   const ProgressText = document.getElementById("progressText");
   const NumOfQuestions = testQuestions.length;
 
-  let _ProgressFill = function(currentQuestionNumber, NumOfQuestions){
-    ProgressFill.style.width = ((currentQuestionNumber+1)/NumOfQuestions)*100+"%";
+  let _ProgressFill = function(currentQuestionNumber, NumOfQuestions) {
+    ProgressFill.style.width =
+      ((currentQuestionNumber + 1) / NumOfQuestions) * 100 + "%";
   };
 
-  let _ProgressText = function(currentQuestionNumber, NumOfQuestions){
-    ProgressText.innerHTML = (currentQuestionNumber+1)+"/"+NumOfQuestions;
+  let _ProgressText = function(currentQuestionNumber, NumOfQuestions) {
+    ProgressText.innerHTML = currentQuestionNumber + 1 + "/" + NumOfQuestions;
   };
 
-  let ProgressInit = function(){
+  let ProgressInit = function() {
     _ProgressFill(-1, NumOfQuestions);
     _ProgressText(-1, NumOfQuestions);
   };
-  
-  let ProgressVisible = function(state){
+
+  let ProgressVisible = function(state) {
     ProgressContainer.style.opacity = state ? "1" : "0";
   };
 
-  let UpdateProgress = function(currentQuestionNumber){
+  let UpdateProgress = function(currentQuestionNumber) {
     _ProgressFill(currentQuestionNumber, NumOfQuestions);
     _ProgressText(currentQuestionNumber, NumOfQuestions);
   };
 
-  return{
+  return {
     ProgressInit: ProgressInit,
-    UpdateProgress: UpdateProgress, 
-    ProgressVisible: ProgressVisible  
+    UpdateProgress: UpdateProgress,
+    ProgressVisible: ProgressVisible
   };
-  
 })();
