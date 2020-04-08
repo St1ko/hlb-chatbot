@@ -10,8 +10,8 @@ For development, you will need Node.js and package manager Yarn, installed in yo
 ### Node.js installation
 To install Node.js and npm go to the [official Node.js website](https://nodejs.org/) and download the installer or run the following commands in your command line.
 
-      $ sudo apt install nodejs
-      $ sudo apt install npm
+    $ sudo apt install nodejs
+    $ sudo apt install npm
 
 You can verify your installation by running the following commands.
 
@@ -24,7 +24,7 @@ You can verify your installation by running the following commands.
 ### Yarn installation
 To install Yarn, run the following command in your command line.
 
-      $ npm install -g yarn
+    $ npm install -g yarn
 
 ---
 
