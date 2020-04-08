@@ -231,9 +231,7 @@ const eind = function() {
  /* ====== Progressbar ====== */
 let progressbar = (function(){
 
-  const ProgressContainer = document.getElementById("progressContainer");
   const ProgressContent = document.getElementById("progressContainerInner");
-  const BotuiContainer = document.getElementsByClassName("botui")[0];
   const ProgressFill = document.getElementById("progressBarFill");
   const ProgressText = document.getElementById("progressText");
   const NumOfQuestions = testQuestions.length;
@@ -252,9 +250,7 @@ let progressbar = (function(){
   };
   
   let ProgressVisible = function(state){
-    //Hey als dit merge confilcts veroorzaakt moeten de regels hieronder blijven staan
     ProgressContent.style.opacity = state ? "1" : "0";
-    // ^^^ ^^^
   };
 
   let UpdateProgress = function(currentQuestionNumber){
