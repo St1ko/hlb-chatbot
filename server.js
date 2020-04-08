@@ -9,7 +9,7 @@ app.use(
     src: path.join(__dirname, 'client/scss'),
     dest: path.join(__dirname, 'client'),
     debug: true,
-    outputStyle: 'compressed' // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
+    outputStyle: 'compressed'
   })
 );
 
