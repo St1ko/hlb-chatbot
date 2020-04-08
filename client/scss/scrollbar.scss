@@ -1,0 +1,18 @@
+@import "_colors.scss";
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: $white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: $white;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid $white;
+  background-color: $hlb_blue;
+}

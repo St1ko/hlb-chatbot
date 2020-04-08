@@ -1,0 +1,13 @@
+@import "_typography.scss";
+
+@import "botui.scss";
+@import "progressbar.scss";
+@import "scrollbar.scss";
+@import "userbar.scss";
+
+body {
+  background-image: url("../img/bg.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
