@@ -2,7 +2,6 @@
 
 A chatbot made for HLB Van Daal during a school project at Fontys University of Applied Sciences - Bachelor ICT & Media Design
 
----
 ## Requirements
 
 For development, you will need Node.js and package manager Yarn, installed in your environement. Also make sure `git` is available in your PATH.
@@ -26,8 +25,6 @@ To install Yarn, run the following command in your command line.
 
     $ npm install -g yarn
 
----
-
 ## Local development
 Clone this repository to you local machine by running the following command in your command line.
 
@@ -45,8 +42,6 @@ To start the application run the following command. This will compile all scss f
     $ yarn start
     
 Go to `http://localhost:8000` to view the application that is running on your local machine.
-
----
 
 ## Built With
 
