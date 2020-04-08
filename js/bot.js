@@ -85,6 +85,8 @@ botui.message
   });
 
 const test = function() {
+  progressbar.ProgressInit();
+  progressbar.ProgressVisible(true);
   botui.message
     .add({
       delay: 500,
@@ -132,10 +134,12 @@ const rateQuestion = index => {
         })
         .then(function(res) {
           addToResults(index, res.value);
+          progressbar.UpdateProgress(index);
 
           if (testQuestions[index + 1]) {
             rateQuestion(index + 1);
           } else {
+            progressbar.ProgressVisible(false);
             uitslag();
           }
         });
@@ -222,3 +226,50 @@ const eind = function() {
     content: "HLB Van Daal zal zo snel mogelijk contact met u opnemen"
   });
 };
+
+
+ /* ====== Progressbar ====== */
+let progressbar = (function(){
+
+  const ProgressContainer = document.getElementById("progressContainer");
+  const ProgressFill = document.getElementById("progressBarFill");
+  const ProgressText = document.getElementById("progressText");
+  const NumOfQuestions = testQuestions.length;
+
+  let _ProgressFill = function(currentQuestionNumber, NumOfQuestions){
+    ProgressFill.style.width = ((currentQuestionNumber+1)/NumOfQuestions)*100+"%";
+  };
+
+  let _ProgressText = function(currentQuestionNumber, NumOfQuestions){
+    ProgressText.innerHTML = (currentQuestionNumber+1)+"/"+NumOfQuestions;
+  };
+
+  let ProgressInit = function(){
+      _ProgressFill(-1, NumOfQuestions);
+      _ProgressText(-1, NumOfQuestions);
+  };
+  
+  let ProgressVisible = function(state){
+      if(state == true){
+          ProgressContainer.style.opacity = "1";
+      }
+      else if(state == false){
+          ProgressContainer.style.opacity = "0";
+      }
+      else{
+          //console.log("error")
+      };
+  };
+
+  let UpdateProgress = function(currentQuestionNumber){
+      _ProgressFill(currentQuestionNumber, NumOfQuestions);
+      _ProgressText(currentQuestionNumber, NumOfQuestions);
+  };
+
+  return{
+    ProgressInit: ProgressInit,
+    UpdateProgress: UpdateProgress, 
+    ProgressVisible: ProgressVisible  
+  };
+  
+})();
