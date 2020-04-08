@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/St1ko/hlb-chatbot#readme",
   "dependencies": {
-    "concurrently": "^5.1.0",
     "express": "^4.17.1",
     "node-sass-middleware": "^0.11.0",
     "nodemon": "^2.0.2",
