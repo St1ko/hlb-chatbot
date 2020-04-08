@@ -1,6 +1,17 @@
 const express = require('express');
 const path = require('path');
+const sassMiddleware = require('node-sass-middleware');
+
 const app = express();
+
+app.use(
+  sassMiddleware({
+    src: path.join(__dirname, 'client/scss'),
+    dest: path.join(__dirname, 'client'),
+    debug: true,
+    outputStyle: 'compressed' // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
+  })
+);
 
 app.use(express.static(__dirname + '/client'));
 

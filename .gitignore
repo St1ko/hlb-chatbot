@@ -4,6 +4,6 @@
 /node_modules
 
 # css
-/client/css
+/client/style.css
 
 yarn-error.log
