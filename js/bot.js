@@ -85,8 +85,6 @@ botui.message
   });
 
 const test = function() {
-  progressbar.ProgressInit();
-  progressbar.ProgressVisible(true);
   botui.message
     .add({
       delay: 500,
@@ -94,6 +92,8 @@ const test = function() {
         "Welke van deze onderwerpen zorgen binnen uw bedrijf voor problemen?"
     })
     .then(function() {
+      progressbar.ProgressInit();
+      progressbar.ProgressVisible(true);
       rateQuestion(0);
     });
 };
@@ -232,6 +232,8 @@ const eind = function() {
 let progressbar = (function(){
 
   const ProgressContainer = document.getElementById("progressContainer");
+  const ProgressContent = document.getElementById("progressContainerInner");
+  const BotuiContainer = document.getElementsByClassName("botui")[0];
   const ProgressFill = document.getElementById("progressBarFill");
   const ProgressText = document.getElementById("progressText");
   const NumOfQuestions = testQuestions.length;
@@ -250,7 +252,9 @@ let progressbar = (function(){
   };
   
   let ProgressVisible = function(state){
-    ProgressContainer.style.opacity = state ? "1" : "0";
+    //Hey als dit merge confilcts veroorzaakt moeten de regels hieronder blijven staan
+    ProgressContent.style.opacity = state ? "1" : "0";
+    // ^^^ ^^^
   };
 
   let UpdateProgress = function(currentQuestionNumber){
