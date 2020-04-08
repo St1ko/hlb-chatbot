@@ -57,7 +57,7 @@ const botui = new BotUI("hello-world");
 botui.message
   .add({
     content:
-      "Hallo, ik ben Dirk de virtuele assistent van HLB Van Daal! Wat leuk om je te zien."
+      "Hallo, ik ben Dirk de virtuele assistent van HLB Van Daal. Wat leuk om u te zien."
   })
   .then(function() {
     botui.message
@@ -92,7 +92,7 @@ const test = function() {
     .add({
       delay: 1000,
       content:
-        "Ik ga je nu een paar vragen stellen om erachter te komen waar wij je mee kunnen helpen. Er komen in totaal 8 uitspraken.Je kan antwoord geven door op de knoppen te drukken van 1 tot 5, waarbij je met 5 eens bent met de uitspraak en 1 er niet eens mee bent. Succes!"
+        "Ik ga u nu een paar vragen stellen om erachter te komen waar wij u mee kunnen helpen. Er komen in totaal 8 uitspraken. U kunt antwoord geven door op de knoppen te drukken van 1 tot 5, waarbij u met 5 eens bent met de uitspraak en 1 niet eens mee bent met de uitspraak. Succes!"
     })
     .then(function() {
       botui.action
@@ -200,7 +200,7 @@ const uitslag = function() {
     .add({
       delay: 1000,
       content:
-        "Bedankt. We zien dat je nog kan verbeteren op " +
+        "Bedankt. We zien dat u nog kan verbeteren op " +
         getLowestScore().thema +
         " " +
         getLowestScore().indepth
