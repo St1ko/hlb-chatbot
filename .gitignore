@@ -7,3 +7,5 @@
 /client/style.css
 
 yarn-error.log
+
+.DS_Store
