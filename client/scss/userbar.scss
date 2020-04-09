@@ -1,4 +1,4 @@
-@import "_colors.scss";
+@import '_colors.scss';
 
 .user-bar {
   height: 55px;
@@ -33,6 +33,7 @@
     .material-icons {
       color: white;
       font-size: 3em;
+      transition: all 1s ease-in-out;
     }
   }
 }
