@@ -2,3 +2,8 @@
 
 # dependencies
 /node_modules
+
+# css
+/client/style.css
+
+yarn-error.log

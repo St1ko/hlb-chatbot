@@ -1,0 +1,38 @@
+@import "_colors.scss";
+
+.user-bar {
+  height: 55px;
+  background: $dark_blue;
+  color: $white;
+  padding: 0 8px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+
+  .avatar {
+    margin-left: 6px;
+    width: 36px;
+    height: 36px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .name {
+    margin-left: 12px;
+    flex: 1;
+  }
+
+  .button-maxmin button {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .material-icons {
+      color: white;
+      font-size: 3em;
+    }
+  }
+}
