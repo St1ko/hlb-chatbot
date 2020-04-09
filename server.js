@@ -3,6 +3,7 @@ const path = require('path');
 const sassMiddleware = require('node-sass-middleware');
 
 const app = express();
+const port = process.env.PORT || 8000;
 
 app.use(
   sassMiddleware({
@@ -19,6 +20,6 @@ app.get('/', (req, res) =>
   res.sendFile(path.join(__dirname, 'client', 'index.html'))
 );
 
-app.listen(8000, () => {
-  console.log('Example app listening on port 8000');
+app.listen(port, () => {
+  console.log('Example app listening on port ' + port);
 });
