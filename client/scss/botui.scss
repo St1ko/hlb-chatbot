@@ -54,6 +54,26 @@
 .botui-actions-ratings button {
   border-radius: 0;
 }
+.botui-actions-ratings:before {
+  display: flex;
+  align-items: center;
+  color: $hlb_blue;
+  font-family: "Muli", sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  margin-right: 10px;
+  content: "Oneens";
+}
+.botui-actions-ratings:after {
+  display: flex;
+  align-items: center;
+  color: $hlb_blue;
+  font-family: "Muli", sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  margin-left: 10px;
+  content: "Eens";
+}
 
 .botui-actions-ratings button:first-child {
   border-radius: 10px 0px 0px 10px;
