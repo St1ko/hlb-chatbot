@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "deploy": "PORT=80 node server.js"
+    "deploy": "PROD=true node server.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
     "https": "^1.0.0",
     "node-sass-middleware": "^0.11.0",
     "nodemon": "^2.0.2",
