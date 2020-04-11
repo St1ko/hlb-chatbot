@@ -67,7 +67,8 @@ Now before you continue, you need to create two directories and a file in `hlb-c
     $ mkdir .well-known
     $ mkdir .well-known/acme-challenge
     $ vim .well-known/acme-challenge/some-string   
-**(replace `some-string` with your long alphanumeric string)**
+*(replace `some-string` with your long alphanumeric string)*
+
 
 In the vim window you want to paste the other long alphanumeric string listed under the url. Save the file (in vim: `esc :wq enter`.
 
