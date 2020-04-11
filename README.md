@@ -56,18 +56,19 @@ Now generate a SSL certificate using the following command:
 
     $ certbot certonly --manual
 
-Follow the interactive script until the session states: 
-"Make sure your web server displays the following content at `http://yourdomain/.well-known/acme-challenge/some-string`" 
+Follow the interactive script until the session states
+> "Make sure your web server displays the following content at `http://yourdomain/.well-known/acme-challenge/some-string`" 
 
 Where `some-string` is a long alphanumeric string. This string will be the name of a file that you are about to create now.
 
 Now before you continue, you need to create two directories and a file in `hlb-chatbot/client`. (Without closing the current session!)
 
+*(replace `some-string` with your long alphanumeric string)*
+
     $ cd hlb-chatbot/client
     $ mkdir .well-known
     $ mkdir .well-known/acme-challenge
     $ vim .well-known/acme-challenge/some-string   
-*(replace `some-string` with your long alphanumeric string)*
 
 
 In the vim window you want to paste the other long alphanumeric string listed under the url. Save the file (in vim: `esc :wq enter`.
