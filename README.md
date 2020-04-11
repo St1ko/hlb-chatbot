@@ -59,9 +59,7 @@ Now generate a SSL certificate using the following command:
 Follow the interactive script until the session states
 > "Make sure your web server displays the following content at `http://yourdomain/.well-known/acme-challenge/some-string`" 
 
-Where `some-string` is a long alphanumeric string. This string will be the name of a file that you are about to create now.
-
-Now before you continue, you need to create two directories and a file in `hlb-chatbot/client`. (Without closing the current session!)
+Where `some-string` is a long alphanumeric string. This string will be the name of a file that you are about to create now. Now before you continue, you need to create two directories and a file in `hlb-chatbot/client`. (Without closing the current session!)
 
 *(replace `some-string` with your long alphanumeric string)*
 
@@ -76,7 +74,7 @@ In the vim window you want to paste the other long alphanumeric string listed un
 To verify that everything is fine, open up your browser and navigate to: `http://yourdomain.com/.well-known/acme-challenge/some-string`
 Your browser should download your challenge file. If it’s not the case, take everything back from the start. Don’t touch your shell, restart from directory & file creation.
 
-Go back to your certbot session and continue by pressing enter.
+If the download worked, go back to your certbot session and continue by pressing enter.
 
 ### Add credentials to config.json
 
