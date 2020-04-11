@@ -1,15 +1,12 @@
 @import '_colors.scss';
 
 .botui-app-container {
-  position: fixed;
-  bottom: 2.5em;
-  right: 2.5em;
   height: 40em;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
   transition: all 1s ease-in-out;
 
   &.minimized {
-    transform: translateY(38em);
+    transform: translateY(35.5em);
 
     .material-icons {
       transform: rotate(180deg);
