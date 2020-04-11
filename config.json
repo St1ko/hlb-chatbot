@@ -7,7 +7,7 @@
   "production": {
     "config_id": "production",
     "http_port": 80,
-    "https_port": 433,
+    "https_port": 443,
     "ssl_credentials_path": ""
   }
 }
