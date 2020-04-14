@@ -6,5 +6,8 @@
 @import 'userbar.scss';
 
 body {
-  margin: 0;
+  background-image: url('../img/bg.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
