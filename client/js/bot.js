@@ -92,7 +92,7 @@ botui.message
       .add({
         delay: 1200,
         content:
-          'Wij hebben binnen HLB Van Daal een Challenge & Control tool ontwikkeld. Deze tool focust op het optimaliseren van uw bedrijf. Heeft u interesse in het afnemen van deze korte test? Zo kunnen wij u helpen bij het optimaliseren van uw bedrijf.'
+          'Wij hebben binnen HLB Van Daal een Challenge & Control tool ontwikkeld. Deze tool focust op het optimaliseren van uw bedrijf. Heeft u interesse in het afnemen van deze korte test? Zo kunnen wij u helpen bij het optimaliseren van uw bedrijf. Heeft u liever gelijk contact met ons? Klik dan op Nee'
       })
       .then(function() {
         botui.action
@@ -253,15 +253,15 @@ const contact = function() {
           human: true,
           action: [
             {
-              text: 'Via mail',
+              text: 'Mail mij',
               value: () => mail()
             },
             {
-              text: 'Via telefoon',
+              text: 'Bel mij',
               value: () => telefoon()
             },
             {
-              text: 'Zelf contact opnemen',
+              text: 'Ik wil zelf contact opnemen',
               value: () => zelfContact()
             }
           ]
@@ -290,7 +290,7 @@ const telefoon = function() {
     .text({
       action: {
         sub_type: 'tel',
-        placeholder: 'Vul uw nummer hier in'
+        placeholder: 'Vul uw telefoonnummer hier in'
       }
     })
     .then(function() {
