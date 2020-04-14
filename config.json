@@ -1,0 +1,13 @@
+{
+  "development": {
+    "config_id": "development",
+    "http_port": 8000,
+    "https_port": 9000
+  },
+  "production": {
+    "config_id": "production",
+    "http_port": 80,
+    "https_port": 443,
+    "ssl_credentials_path": ""
+  }
+}
