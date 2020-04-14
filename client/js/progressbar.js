@@ -1,5 +1,5 @@
 const progressbar = (function() {
-  const ProgressContainer = document.getElementById('progressContainer');
+  const ProgressContainer = document.getElementById('progressContainerInner');
   const ProgressFill = document.getElementById('progressBarFill');
   const ProgressText = document.getElementById('progressText');
   const NumOfQuestions = testQuestions.length;
