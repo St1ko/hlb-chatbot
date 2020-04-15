@@ -92,7 +92,7 @@ botui.message
       .add({
         delay: 1200,
         content:
-          'Wij hebben binnen HLB Van Daal een Challenge & Control tool ontwikkeld. Deze tool focust op het optimaliseren van de operationele en financiële processen van uw bedrijf. Zodat het rendement verbetert en u uw doelen kunt realiseren. Heeft u interesse in het afnemen van deze korte test? Zo kunnen wij u helpen bij het optimaliseren van uw bedrijf. Heeft u liever gelijk contact met ons? Klik dan op Nee.'
+          'Wij hebben binnen HLB Van Daal een Challenge & Control tool ontwikkeld. Deze tool focust op het optimaliseren van de operationele en financiële processen van uw bedrijf. Zodat het rendement verbetert en u uw doelen kunt realiseren. Heeft u interesse in het afnemen van deze korte test? Na het beantwoorden van 8 vragen kunnen wij u een indicatie geven wat er verbeterd kan worden in uw bedrijf. Heeft u liever gelijk contact met ons? Klik dan op Nee.'
       })
       .then(function() {
         botui.action
