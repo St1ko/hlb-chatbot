@@ -85,14 +85,14 @@ const botui = new BotUI('hlbot');
 botui.message
   .add({
     content:
-      'Hallo, ik ben Dirk de virtuele assistent van HLB Van Daal. Wat leuk om u te zien.'
+      'Hallo, ik ben Dirk, de virtuele assistent van HLB Van Daal. Wat leuk om u te zien.'
   })
   .then(function() {
     botui.message
       .add({
         delay: 1200,
         content:
-          'Wij hebben binnen HLB Van Daal een Challenge & Control tool ontwikkeld. Deze tool focust op het optimaliseren van uw bedrijf. Heeft u interesse in het afnemen van deze korte test? Zo kunnen wij u helpen bij het optimaliseren van uw bedrijf. Heeft u liever gelijk contact met ons? Klik dan op Nee'
+          'Wij hebben binnen HLB Van Daal een Challenge & Control tool ontwikkeld. Deze tool focust op het optimaliseren van de operationele en financiële processen van uw bedrijf. Zodat het rendement verbetert en u uw doelen kunt realiseren. Heeft u interesse in het afnemen van deze korte test? Zo kunnen wij u helpen bij het optimaliseren van uw bedrijf. Heeft u liever gelijk contact met ons? Klik dan op Nee.'
       })
       .then(function() {
         botui.action
@@ -120,7 +120,7 @@ const test = function() {
     .add({
       delay: 1200,
       content:
-        'Ik ga u nu een paar vragen stellen om erachter te komen waar wij u mee kunnen helpen. Er komen in totaal 8 uitspraken. U kunt antwoord geven door op de knoppen te drukken van 1 tot 5, waarbij u met 5 eens bent met de uitspraak en 1 niet eens mee bent met de uitspraak. Succes!'
+        'Ik ga u nu een paar vragen stellen om erachter te komen waar wij u mee kunnen helpen. Er komen in totaal 8 uitspraken. U kunt antwoord geven door op de knoppen te drukken van 1 tot 5, waarbij u bij 5 eens bent met de uitspraak en 1 niet eens mee bent met de uitspraak. Succes!'
     })
     .then(function() {
       botui.action
@@ -232,7 +232,7 @@ const uitslag = function() {
       content:
         'Bedankt. We zien dat u nog kan verbeteren op ' +
         getLowestScore().thema +
-        ' ' +
+        '. ' +
         getLowestScore().indepth
     })
     .then(function() {
@@ -245,7 +245,7 @@ const contact = function() {
     .add({
       delay: 6000,
       content:
-        'Om een beter idee te krijgen van uw resultaat en hoe wij u daarmee kunnen helpen, kunt u hieronder uw mailadres of telefoonnummer achterlaten. Een medewerker zal dan zo snel mogelijk contact met u opnemen.<br> U kunt ook zelf contact opnemen met een van onze medewerkers'
+        'Om een beter idee te krijgen van uw resultaat en hoe wij u daarmee kunnen helpen, kunt u hieronder uw mailadres of telefoonnummer achterlaten. Een medewerker zal dan zo snel mogelijk contact met u opnemen.<br> U kunt ook zelf contact opnemen met een van onze medewerkers.'
     })
     .then(function() {
       botui.action
@@ -277,7 +277,7 @@ const mail = function() {
     .text({
       action: {
         sub_type: 'email',
-        placeholder: 'Vul hier uw mailadress in'
+        placeholder: 'Vul hier uw mailadress in.'
       }
     })
     .then(function() {
@@ -290,7 +290,7 @@ const telefoon = function() {
     .text({
       action: {
         sub_type: 'tel',
-        placeholder: 'Vul uw telefoonnummer hier in'
+        placeholder: 'Vul uw telefoonnummer hier in.'
       }
     })
     .then(function() {
