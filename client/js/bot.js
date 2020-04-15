@@ -230,7 +230,7 @@ const uitslag = function() {
     .add({
       delay: 1200,
       content:
-        'Bedankt. We zien dat u nog kan verbeteren op het gebied van' +
+        'Bedankt. We zien dat u nog kan verbeteren op het gebied van ' +
         getLowestScore().thema +
         '. ' +
         getLowestScore().indepth
