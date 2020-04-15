@@ -27,7 +27,7 @@ const testQuestions = [
     thema: 'Mensen'
   },
   {
-    question: 'We hebben een stip op de horizon vastgesteld',
+    question: 'We hebben een plan voor de toekomst',
     thema: 'Strategie'
   },
   {
@@ -105,7 +105,7 @@ botui.message
               },
               {
                 text: 'Nee',
-                value: () => contact()
+                value: () => immediateContact()
               }
             ]
           })
@@ -120,7 +120,7 @@ const test = function() {
     .add({
       delay: 1200,
       content:
-        'Ik ga u nu een paar vragen stellen om erachter te komen waar wij u mee kunnen helpen. Er komen in totaal 8 uitspraken. U kunt antwoord geven door op de knoppen te drukken van 1 tot 5, waarbij u met 5 eens bent met de uitspraak en 1 niet eens mee bent met de uitspraak. Succes!'
+        'Ik ga u nu een paar vragen stellen om erachter te komen waar wij u mee kunnen helpen. Er komen in totaal 8 uitspraken over de 4 volgende thema’s: Persoonlijk, Strategie, Informatie en Mensen. U kunt antwoord geven door op de knoppen te drukken van 1 tot 5, waarbij u met 5 eens bent met de uitspraak en 1 niet eens mee bent. Wilt u meer uitleg? Klik dan op "Meer uitleg". Succes!'
     })
     .then(function() {
       botui.action
@@ -230,9 +230,9 @@ const uitslag = function() {
     .add({
       delay: 1200,
       content:
-        'Bedankt. We zien dat u nog kan verbeteren op ' +
+        'Bedankt. We zien dat u nog kan verbeteren op het gebied van' +
         getLowestScore().thema +
-        ' ' +
+        '. ' +
         getLowestScore().indepth
     })
     .then(function() {
@@ -245,7 +245,39 @@ const contact = function() {
     .add({
       delay: 6000,
       content:
-        'Om een beter idee te krijgen van uw resultaat en hoe wij u daarmee kunnen helpen, kunt u hieronder uw mailadres of telefoonnummer achterlaten. Een medewerker zal dan zo snel mogelijk contact met u opnemen.<br> U kunt ook zelf contact opnemen met een van onze medewerkers'
+        'Om een beter idee te krijgen van uw resultaat en hoe wij u daarmee kunnen helpen, kunt u hieronder uw mailadres of telefoonnummer achterlaten. Een medewerker zal dan zo snel mogelijk contact met u opnemen.<br> U kunt ook zelf contact opnemen met een van onze medewerkers.'
+    })
+    .then(function() {
+      botui.action
+        .button({
+          human: true,
+          action: [
+            {
+              text: 'Mail mij',
+              value: () => mail()
+            },
+            {
+              text: 'Bel mij',
+              value: () => telefoon()
+            },
+            {
+              text: 'Ik wil zelf contact opnemen',
+              value: () => zelfContact()
+            }
+          ]
+        })
+        .then(function(res) {
+          res.value();
+        });
+    });
+};
+
+const immediateContact = function() {
+  botui.message
+    .add({
+      delay: 1200,
+      content:
+        'U kunt hieronder uw mailadres of telefoonnummer achterlaten. Een medewerker zal dan zo snel mogelijk contact met u opnemen.<br> U kunt ook zelf contact opnemen met een van onze medewerkers.'
     })
     .then(function() {
       botui.action
