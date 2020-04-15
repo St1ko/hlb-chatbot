@@ -44,7 +44,10 @@ To start the application run the following command. This will compile all scss f
 Go to `http://localhost:8000` to view the application that is running on your local machine.
 
 ## Deploying to production
-To deploy this application to a prodcuction environment, some additional steps are required. After following the steps of the previous section, you want to generate a SSL certificate using LetsEncrypt. This is required to run the chatbot in an IFrame. It is required to have a server running and a domain name pointing to it.
+To deploy this application to a prodcuction environment, some additional steps are required. After following the steps of the previous section, you want to generate a SSL certificate using LetsEncrypt. This is required to run the chatbot in an IFrame. 
+
+### Generate SSL certificate
+Before generate a SSL certificate, it is required to have a server running and a domain name pointing to it.
 
 First, install certbot to your server:
 
@@ -76,7 +79,7 @@ Your browser should download your challenge file. If it’s not the case, take e
 
 If the download worked, go back to your certbot session and continue by pressing enter.
 
-### Add credentials to config.json
+### Add certificate credentials to config.json
 
 Finally in `hlb-chatbot/config.json` you need to point to the created SSL credentials. Change the `production` object in the `config.json` file to look like this:
 
