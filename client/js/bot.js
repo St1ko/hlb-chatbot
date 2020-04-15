@@ -85,14 +85,14 @@ const botui = new BotUI('hlbot');
 botui.message
   .add({
     content:
-      'Hallo, ik ben Dirk de virtuele assistent van HLB Van Daal. Wat leuk om u te zien.'
+      'Hallo, ik ben Dirk, de virtuele assistent van HLB Van Daal. Wat leuk om u te zien.'
   })
   .then(function() {
     botui.message
       .add({
         delay: 1200,
         content:
-          'Wij hebben binnen HLB Van Daal een Challenge & Control tool ontwikkeld. Deze tool focust op het optimaliseren van uw bedrijf. Heeft u interesse in het afnemen van deze korte test? Zo kunnen wij u helpen bij het optimaliseren van uw bedrijf. Heeft u liever gelijk contact met ons? Klik dan op Nee'
+          'Wij hebben binnen HLB Van Daal een Challenge & Control tool ontwikkeld. Deze tool focust op het optimaliseren van de operationele en financiële processen van uw bedrijf. Zodat het rendement verbetert en u uw doelen kunt realiseren. Heeft u interesse in het afnemen van deze korte test? Na het beantwoorden van 8 vragen kunnen wij u een indicatie geven wat er verbeterd kan worden in uw bedrijf. Heeft u liever gelijk contact met ons? Klik dan op Nee.'
       })
       .then(function() {
         botui.action
@@ -120,7 +120,7 @@ const test = function() {
     .add({
       delay: 1200,
       content:
-        'Ik ga u nu een paar vragen stellen om erachter te komen waar wij u mee kunnen helpen. Er komen in totaal 8 uitspraken over de 4 volgende thema’s: Persoonlijk, Strategie, Informatie en Mensen. U kunt antwoord geven door op de knoppen te drukken van 1 tot 5, waarbij u met 5 eens bent met de uitspraak en 1 niet eens mee bent. Wilt u meer uitleg? Klik dan op "Meer uitleg". Succes!'
+        'Ik ga u nu een paar vragen stellen om erachter te komen waar wij u mee kunnen helpen. Er komen in totaal 8 uitspraken over de 4 volgende thema’s: Persoonlijk, Strategie, Informatie en Mensen. U kunt antwoord geven door op de knoppen te drukken van 1 tot 5, waarbij u bij 5 eens bent met de uitspraak en 1 niet eens mee bent. Wilt u meer uitleg? Klik dan op "Meer uitleg". Succes!'
     })
     .then(function() {
       botui.action
@@ -309,7 +309,7 @@ const mail = function() {
     .text({
       action: {
         sub_type: 'email',
-        placeholder: 'Vul hier uw mailadress in'
+        placeholder: 'Vul hier uw e-mailadres in.'
       }
     })
     .then(function() {
@@ -322,7 +322,7 @@ const telefoon = function() {
     .text({
       action: {
         sub_type: 'tel',
-        placeholder: 'Vul uw telefoonnummer hier in'
+        placeholder: 'Vul uw telefoonnummer hier in.'
       }
     })
     .then(function() {
