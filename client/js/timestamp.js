@@ -21,7 +21,8 @@ function appendTimestamp(index, HorB) {
     // auto defaults to bot styling
   }
 
-  document
-    .getElementsByClassName('botui-message')
-    [index].appendChild(timestamp);
+  let element = document.getElementsByClassName('botui-message')[index];
+  if(element != null){
+    element.appendChild(timestamp);
+  }
 }

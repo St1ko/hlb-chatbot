@@ -80,6 +80,14 @@ const addToResults = (index, value) => {
   }
 };
 
+const resetVars = function(){
+  for (const result of results) {
+    if (result.thema === testQuestions[index].thema) {
+      result.score = null;
+    }
+  }
+};
+
 const botui = new BotUI('hlbot');
 
 botui.message
@@ -87,7 +95,11 @@ botui.message
     content:
       'Hallo, ik ben Dirk de virtuele assistent van HLB Van Daal. Wat leuk om u te zien.'
   })
-  .then(function() {
+  .then(function (){
+    start();
+  });
+
+  const start = function() {
     botui.message
       .add({
         delay: 1200,
@@ -113,7 +125,7 @@ botui.message
             res.value();
           });
       });
-  });
+  };
 
 const test = function() {
   botui.message
@@ -335,6 +347,9 @@ const eind = function() {
     delay: 1200,
     content:
       'Een medewerker van HLB Van Daal zal zo snel mogelijk contact met u opnemen. Bedankt en nog een fijne dag verder!'
+  })
+  .then(function() {
+    herstart()
   });
 };
 
@@ -343,5 +358,32 @@ const zelfContact = function() {
     delay: 1200,
     content:
       'U kunt contact opnemen met een van onze medewerkers via het telefoonnummer: +31583728 of ons mailadres: HLB@Vandaal.nl'
+  })
+  .then(function() {
+    herstart()
   });
+};
+
+const herstart = function() {
+  botui.action
+  .button({
+    human: true,
+    action: [
+      {
+        text: 'Ik heb nog ergens anders hulp bij nodig',
+        value: () => clear()
+      },
+    ]
+  })
+  .then(function(res) {
+    res.value();
+  });
+};
+
+const clear = function() {
+    botui.message.removeAll()
+    .then(function() {
+      resetVars();
+      start();
+    });
 };
