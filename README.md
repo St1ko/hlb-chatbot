@@ -24,6 +24,8 @@ You can verify your installation by running the following commands.
 To install Yarn, run the following command in your command line.
 
     $ npm install -g yarn
+    
+&nbsp;
 
 ## Local development
 Clone this repository to you local machine by running the following command in your command line.
@@ -42,6 +44,8 @@ To start the application run the following command. This will compile all scss f
     $ yarn start
     
 Go to `http://localhost:8000` to view the application that is running on your local machine.
+
+&nbsp;
 
 ## Deploying to production
 To deploy this application to a prodcuction environment, some additional steps are required. After following the steps of the previous section, you want to generate a SSL certificate using LetsEncrypt. This is required to run the chatbot in an IFrame. 
@@ -106,6 +110,8 @@ Now we're all set and can start our Node.js application by running the following
     $ pm2 start yarn -- deploy
     
 The application is now available on your domain.
+
+&nbsp;
 
 ## Built With
 
