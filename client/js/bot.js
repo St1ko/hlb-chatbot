@@ -105,7 +105,7 @@ botui.message
               },
               {
                 text: 'Nee',
-                value: () => immContact()
+                value: () => immediateContact()
               }
             ]
           })
@@ -122,7 +122,7 @@ const test = function() {
     .add({
       delay: 1200,
       content:
-        'Ik ga u nu een paar vragen stellen om erachter te komen waar wij u mee kunnen helpen. Er komen in totaal 8 uitspraken over de 4 volgende thema’s: Persoonlijk, Strategie, Informatie en Mensen. U kunt antwoord geven door op de knoppen te drukken van 1 tot 5, waarbij u met 5 eens bent met de uitspraak en 1 niet eens mee bent. Wilt u meer uitleg? Klik dan op “Meer uitleg. Succes!'
+        'Ik ga u nu een paar vragen stellen om erachter te komen waar wij u mee kunnen helpen. Er komen in totaal 8 uitspraken over de 4 volgende thema’s: Persoonlijk, Strategie, Informatie en Mensen. U kunt antwoord geven door op de knoppen te drukken van 1 tot 5, waarbij u met 5 eens bent met de uitspraak en 1 niet eens mee bent. Wilt u meer uitleg? Klik dan op “Meer uitleg". Succes!'
     })
     .then(function() {
       botui.action
@@ -275,7 +275,7 @@ const contact = function() {
 };
 
 
-const immContact = function() {
+const immediateContact = function() {
   botui.message
     .add({
       delay: 1200,
