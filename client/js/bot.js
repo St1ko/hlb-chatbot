@@ -370,7 +370,7 @@ const herstart = function() {
     human: true,
     action: [
       {
-        text: 'Ik heb nog ergens anders hulp bij nodig',
+        text: 'Herstart de chatbot',
         value: () => clear()
       },
     ]
