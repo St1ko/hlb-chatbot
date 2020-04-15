@@ -17,6 +17,15 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .botui-app-container {
+    height: 100%;
+    width: 100%;
+    bottom: unset;
+    right: unset;
+  }
+}
+
 .botui-container {
   height: calc(100% - 90px);
   width: 100%;
@@ -47,7 +56,7 @@
   }
 }
 
-.botui-actions-container{
+.botui-actions-container {
   margin-bottom: 35px;
 }
 
@@ -59,21 +68,21 @@
   display: flex;
   align-items: center;
   color: $hlb_blue;
-  font-family: "Muli", sans-serif;
+  font-family: 'Muli', sans-serif;
   font-size: 12px;
   line-height: 1.4;
   margin-right: 10px;
-  content: "Oneens";
+  content: 'Oneens';
 }
 .botui-actions-ratings:after {
   display: flex;
   align-items: center;
   color: $hlb_blue;
-  font-family: "Muli", sans-serif;
+  font-family: 'Muli', sans-serif;
   font-size: 12px;
   line-height: 1.4;
   margin-left: 10px;
-  content: "Eens";
+  content: 'Eens';
 }
 
 .botui-actions-ratings button:first-child {
